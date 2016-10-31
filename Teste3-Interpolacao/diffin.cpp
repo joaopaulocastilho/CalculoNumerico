@@ -33,13 +33,6 @@ int main(void) {
   printf("Informe o valor a interpolar: "); scanf("%lf", &ip);
   z = (ip - p[0].x) / (fabs(p[1].x - p[0].x));
   calcula_difs_fin(n, diffin, p); resp = p[0].y;
-
-  for (i = 0; i < n; i++) {
-    printf("\n");
-    for (j = 0; j < (int)diffin[i].size(); j++)
-      printf("%.2lf ", diffin[i][j]);
-  }
-
   for (i = 1; i < n; i++) {
     ac = diffin[0][i] / fat(i);
     for (j = 0; j < i; j++)
