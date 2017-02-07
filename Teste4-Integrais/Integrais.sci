@@ -58,6 +58,6 @@ n = 4; //número de pontos, (4 + 3n)
 x0 = 0; //limitante inferior
 x1 = 1; //limitante superior
 
-printf("Simpson 1: %.9f\n", simpson2(x0, x1, n));
+printf("Simpson 2: %.9f\n", simpson2(x0, x1, n));
 //---------------------------------------------------------//
 
