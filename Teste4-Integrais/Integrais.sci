@@ -25,7 +25,6 @@ function y = simpson1(x0, x1, n)
    y = (h/3) * soma;
 endfunction;
 
-
 function y = simpson2(x0, x1, n)
    h = (x1 -x0) / n;
    soma = f(x0) + f(x1);
@@ -45,7 +44,6 @@ x1 = 1 //limitante superior
 
 printf("Método dos trapézios: %.9f\n", trapezio(x0, x1, n));
 //-----------------------------------------------------------//
-
 
 //--------------------MÉTODO DE SIMPSON 1-------------------//
 n = 3; //número de pontos, ímpar
