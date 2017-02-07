@@ -21,14 +21,16 @@ void calcula_difs(int n, vector<vd> &difs, ponto p[]) {
 int main(void) {
   int n, i, j; ponto p[MAX];
   double ip, resp, ac;
-  printf("Informe o numero de pontos: "); scanf("%d", &n);
+  // printf("Informe o numero de pontos: ");
+  scanf("%d", &n);
   vector<vd>difdiv(n);
-  printf("Informe os pontos:\n");
+  //printf("Informe os pontos:\n");
   for (i = 0; i < n; i++) {
-    printf("Ponto %d: ", i);
+    //printf("Ponto %d: ", i);
     scanf("%lf %lf", &p[i].x, &p[i].y);
   }
-  printf("Informe o valor a interpolar: "); scanf("%lf", &ip);
+  // printf("Informe o valor a interpolar: ");
+  scanf("%lf", &ip);
   calcula_difs(n, difdiv, p); resp = p[0].y;
   for (i = 1; i < n; i++) {
     ac = difdiv[0][i];
@@ -36,6 +38,6 @@ int main(void) {
       ac *= (ip - p[j].x);
     resp += ac;
   }
-  printf("\nResultado: %.6lf\n", resp);
+  printf("Divididas: %.6lf\n", resp);
   return 0;
 }

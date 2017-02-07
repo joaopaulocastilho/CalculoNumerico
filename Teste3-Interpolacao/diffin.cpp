@@ -7,8 +7,9 @@ using namespace std;
 
 typedef struct { double x, y; }ponto;
 typedef vector<double>vd;
+typedef unsigned long long ull;
 
-int fat(int n) { return (n == 0) ? 1 : n * fat(n - 1); }
+ull fat(int n) { return (n == 0) ? 1 : n * fat(n - 1); }
 
 void calcula_difs_fin(int n, vector<vd> &difs, ponto p[]) {
   int i, j; double newdif;
@@ -23,14 +24,16 @@ void calcula_difs_fin(int n, vector<vd> &difs, ponto p[]) {
 int main(void) {
   int n, i, j; ponto p[MAX];
   double ip, resp, ac, z;
-  printf("Informe o numero de pontos: "); scanf("%d", &n);
+  // printf("Informe o numero de pontos: ");
+  scanf("%d", &n);
   vector<vd>diffin(n);
-  printf("Informe os pontos:\n");
+  // printf("Informe os pontos:\n");
   for (i = 0; i < n; i++) {
-    printf("Ponto %d: ", i);
+    //printf("Ponto %d: ", i);
     scanf("%lf %lf", &p[i].x, &p[i].y);
   }
-  printf("Informe o valor a interpolar: "); scanf("%lf", &ip);
+  //printf("Informe o valor a interpolar: ");
+  scanf("%lf", &ip);
   z = (ip - p[0].x) / (fabs(p[1].x - p[0].x));
   calcula_difs_fin(n, diffin, p); resp = p[0].y;
   for (i = 1; i < n; i++) {
@@ -39,6 +42,6 @@ int main(void) {
       ac *= (z - j);
     resp += ac;
   }
-  printf("Resposta: %.6lf\n", resp);
+  printf("Finita: %.6lf\n", resp);
   return 0;
 }
