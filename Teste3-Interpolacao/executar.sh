@@ -10,7 +10,7 @@ do
    echo -e "Arquivo de entrada: " $j "\nRespostas:\n";
    for k in *.out
    do      
-         $k < $j
+         ./$k < $j
    done
    echo -e "\n";
 done
